@@ -24,7 +24,15 @@
 ```js
 // Finish and Paste your solution here
 
+const myDog = {
+  // Only change code below this line
+name: "NF",
+legs: 4,
+tails: 1,
+friends: ['Hootub', 'Hootang;']
 
+  // Only change code above this line
+};
 
 
 ```
@@ -33,7 +41,16 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
 
+// Only change code below this line
+const hatValue = testObj.hat;      // Change this line
+const shirtValue = testObj.shirt;    // Change this line
 
 
 ```
@@ -43,7 +60,16 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
 
+// Only change code below this line
+const entreeValue = testObj["an entree"];   // Change this line
+const drinkValue = testObj["the drink"];    // Change this line
 
 
 ```
@@ -52,7 +78,16 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
 
+// Only change code below this line
+const playerNumber = 16;  // Change this line
+const player = testObj[playerNumber];   // Change this line
 
 
 ```
@@ -63,7 +98,16 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
 
+// Only change code below this line
+myDog.name = "Happy Coder";
 
 
 ```
@@ -73,7 +117,14 @@
 ```js
 // Finish and Paste your solution here
 
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
 
+myDog.bark = "bow-wow";
 
 
 ```
@@ -83,7 +134,17 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
 
+// Only change code below this line
+delete myDog.tails;
 
 
 ```
@@ -93,7 +154,25 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+function phoneticLookup(val) {
+  let result = "";
 
+  // Only change code below this line
+ const Lookup = {
+    "alpha": 'Adams',
+    "bravo": 'Boston',
+    "charlie": 'Chicago',
+    "delta": 'Denver',
+    "echo": 'Easy',
+    "foxtrot": 'Frank',
+  }
+result = Lookup[val]
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
 
 
 ```
@@ -102,7 +181,13 @@
 ```js
 // Finish and Paste your solution here
 
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  return obj.hasOwnProperty(checkProp)? obj[checkProp]:'Not Found'
+  // Only change code above this line
+}
 
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")
 
 
 ```
@@ -112,7 +197,30 @@
 ```js
 // Finish and Paste your solution here
 
-
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Joel",
+    "title": "Man",
+    "release_year": 1975,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
 
 
 ```
@@ -121,7 +229,19 @@
 ```js
 // Finish and Paste your solution here
 
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
 
+const gloveBoxContents = myStorage.car.inside['glove box']
 
 
 ```
@@ -129,7 +249,26 @@
 ```js
 // Finish and Paste your solution here
 
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
 
+const secondTree = myPlants[1].list[1];
 
 
 ```
@@ -140,7 +279,43 @@
 ```js
 // Finish and Paste your solution here
 
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
 
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+ if (value === ""){
+   delete records[id][prop];
+ } else if(prop !== "tracks" && value !== ""){
+   records[id][prop] = value;
+ } else if(prop === "tracks" && records[id].hasOwnProperty("tracks") === false){
+   records[id][prop] = [value];
+ } else if(prop === "tracks" && value !== ""){
+   records[id][prop].push(value);
+ }
+
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 
 
 ```
